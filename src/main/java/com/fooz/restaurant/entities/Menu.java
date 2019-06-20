@@ -27,7 +27,7 @@ public class Menu {
 	}
 
 	/**
-	 *
+	 * Méthode qui liste les ingrédients d'une étape de menu et les affiche.
 	 * @param etapeMenu type RecetteCsuine
 	 * Méthode qui vérifie le type de RecetteCuisine et itère la liste des ingrédient qui correspondent au type passé en paramètre (Entrée, Plat, Dessert).
 	 * Menu contient des entités Entrée Plat Dessert => composition
@@ -50,6 +50,26 @@ public class Menu {
 		}else {
 			System.out.println("Pas prévu au menu");
 		}
+	}
+
+	public float calculNutriScore() {
+		float nutriScore = 0;
+		float nbIngredient = 0;
+		for (Ingredient ingredient : this.entree.getIngredients()) {
+			nutriScore += ingredient.getNutriScore();
+			nbIngredient++;
+		}
+		for (Ingredient ingredient : this.plat.getIngredients()) {
+			nutriScore += ingredient.getNutriScore();
+			nbIngredient++;
+		}
+		for (Ingredient ingredient : this.dessert.getIngredients()) {
+			nutriScore += ingredient.getNutriScore();
+			nbIngredient++;
+		}
+		System.out.println(nutriScore);
+		System.out.println(nbIngredient);
+		return nutriScore/nbIngredient;
 	}
 
 	//Getters Setters

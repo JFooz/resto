@@ -46,6 +46,8 @@ public class App
 
 		System.out.println(pestoScicilienne.getIngredients().size());
 
+		float formuleMidiScore = formuleMidi.calculNutriScore();
+		System.out.println(formuleMidiScore);
 
 	}
 }
