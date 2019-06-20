@@ -26,16 +26,24 @@ public class Menu {
 		this.dessert = dessert;
 	}
 
-	public void listIngredient(RecetteCuisine listIngredient) {
-		if(listIngredient instanceof Entree) {
+	/**
+	 *
+	 * @param etapeMenu type RecetteCsuine
+	 * Méthode qui vérifie le type de RecetteCuisine et itère la liste des ingrédient qui correspondent au type passé en paramètre (Entrée, Plat, Dessert).
+	 * Menu contient des entités Entrée Plat Dessert => composition
+	 * Entrée Plat Dessert hérite de RecetteCuisine.
+	 * Entrée Plat Dessert peuvent également avoir le type RecetteCuisine => polymorphisme.
+	 */
+	public void listIngredient(RecetteCuisine etapeMenu) {
+		if(etapeMenu instanceof Entree) {
 			for (Ingredient ingredient : this.entree.getIngredients()) {
 				System.out.println(ingredient.getNom());
 			}
-		}else if (listIngredient instanceof Plat) {
+		}else if (etapeMenu instanceof Plat) {
 			for (Ingredient ingredient : this.plat.getIngredients()) {
 				System.out.println(ingredient.getNom());
 			}
-		}else if(listIngredient instanceof Dessert){
+		}else if(etapeMenu instanceof Dessert){
 			for (Ingredient ingredient : this.dessert.getIngredients()) {
 				System.out.println(ingredient.getNom());
 			}
@@ -81,12 +89,5 @@ public class Menu {
 		builder.append("]");
 		return builder.toString();
 	}
-
-
-
-
-
-
-
 
 }
