@@ -26,6 +26,24 @@ public class Menu {
 		this.dessert = dessert;
 	}
 
+	public void listIngredient(RecetteCuisine listIngredient) {
+		if(listIngredient instanceof Entree) {
+			for (Ingredient ingredient : this.entree.getIngredients()) {
+				System.out.println(ingredient.getNom());
+			}
+		}else if (listIngredient instanceof Plat) {
+			for (Ingredient ingredient : this.plat.getIngredients()) {
+				System.out.println(ingredient.getNom());
+			}
+		}else if(listIngredient instanceof Dessert){
+			for (Ingredient ingredient : this.dessert.getIngredients()) {
+				System.out.println(ingredient.getNom());
+			}
+		}else {
+			System.out.println("Pas prévu au menu");
+		}
+	}
+
 	//Getters Setters
 	public Plat getPlat() {
 		return this.plat;

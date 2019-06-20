@@ -20,6 +20,10 @@ public abstract class RecetteCuisine {
 		this.ingredients = ingredients;
 	}
 
+	public void addIngredient(Ingredient ingredient) {
+		this.ingredients.add(ingredient);
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
