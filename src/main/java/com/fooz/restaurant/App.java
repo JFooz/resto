@@ -1,5 +1,7 @@
 package com.fooz.restaurant;
 
+import static java.lang.Math.PI;
+
 import com.fooz.restaurant.entities.Dessert;
 import com.fooz.restaurant.entities.Entree;
 import com.fooz.restaurant.entities.Ingredient;
@@ -48,6 +50,8 @@ public class App
 
 		float formuleMidiScore = formuleMidi.calculNutriScore();
 		System.out.println(formuleMidiScore);
+
+		System.out.println(PI);
 
 	}
 }
